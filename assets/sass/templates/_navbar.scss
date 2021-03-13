@@ -17,26 +17,23 @@ nav {
             justify-content: space-between;
         }
         
-        li {
+        a {
             display: block;
             padding: 10px 30px;
             margin: 2vh 2vw;
             border-radius: 15px;
             transition: .2s;
-            
+            color: white;
+            text-decoration: none;
             @include _.media-query(mobile){
                 margin: 0 1vw;
             }
         }
-        li:hover, .active {
+        a:hover, .active {
             cursor: pointer;
             background-color: _.$color-primary;
             transition: .2s;
             box-shadow: 0 8px 6px -6px black;
         }
-    }
-    a {
-        color: white;
-        text-decoration: none;
     }
 }
