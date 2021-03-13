@@ -1,0 +1,19 @@
+@use '../base/const' as _;
+.personal-data {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 2vh 4vw;
+    @include _.media-query(mobile){
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    h4 {
+        font-weight: 300;
+        margin-left: 20px;
+    }
+    li {
+        padding: 2vh 3vw;
+    }
+}

@@ -1,0 +1,34 @@
+@use '../base/const' as _;
+
+.skills-language {
+    ul {
+        margin: 2vh 2.5vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    li {
+        margin: 35px;
+        font-size: 22px;
+        display: inline-flex;
+        align-items: center;
+    }
+    p {
+        flex-grow: 1;
+    }
+    img {
+        width: 40px;
+        margin-right: 15px;
+    }
+    .percentage, .percentage-border {
+        height: 10px;
+        border-radius: 5px;
+    }
+    .percentage-border {
+        width: 100px;
+        border: 1px solid white;
+        margin-left: 20px;
+    }
+    .percentage {
+        background-color: _.$color-primary;
+    }
+}

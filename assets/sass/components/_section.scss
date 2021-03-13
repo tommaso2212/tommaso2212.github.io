@@ -1,0 +1,13 @@
+@use '../base/const' as _;
+section {
+    background-color: _.$color-gray;
+    padding: 3vh 3vw;
+    margin: 4vh 4vw;
+    border-radius: 15px;
+    box-shadow: 
+        0 2px 0 rgba(0,0,0,.5),
+        4px 8px 1px _.$color-primary;
+    h1 {
+        font-size: 34px;
+    }
+}
