@@ -1,6 +1,7 @@
 @use 'templates/navbar';
+@use 'templates/index';
 @use 'templates/skills';
 @use 'templates/experiences';
+@use 'templates/projects';
 
 @use 'components/section';
-@use 'components/info';

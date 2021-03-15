@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="assets/css/stylesheet.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+        <title>Tommaso Pavani - Projects</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">About</a>
+                </li>
+                <li>
+                    <a href="skills.html">Skills</a>
+                </li>
+                <li>
+                    <a href="experiences.html">Experiences</a>
+                </li>
+                <li>
+                    <a href="projects.html" class='active'>Projects</a>
+                </li>
+            </ul>
+        </nav>
+        <section class='projects-section'>
+            <h1>Rest API with Spring Boot</h1>
+            <a href='https://github.com/tommaso2212/EsameOOP' target="_blank"><i class="fas fa-external-link-alt"></i>&nbsp;https://github.com/tommaso2212/EsameOOP</a>
+            <p>Using Spring Boot, a Java framework, I have built a simple Rest API that parses a large .csv and returns some stats about data. The main problem was to parse the dataset without knowing how many features it had.</p>
+        </section>
+        <section class='projects-section'>
+            <h1>Clustering with Python and CUDA</h1>
+            <a href='https://github.com/tommaso2212/EsameRetiCalcolatori' target="_blank"><i class="fas fa-external-link-alt"></i>&nbsp;https://github.com/tommaso2212/EsameRetiCalcolatori</a>
+            <p>Using Python and PyCUDA, a Python library that allows using GPU parallel computation, I have created a simple clustering algorithm. The scope was to enlighten the fact that, in some algorithms, parallel computing is convenient than a procedural approach.</p>
+            <div class='image-div'>    
+                <figure>
+                    <img src='assets/img/clustering_CPU.png' alt='clustering CPU image'/>
+                    <figcaption>Clustering using CPU.</figcaption>
+                </figure>
+                <figure>
+                    <img src='assets/img/clustering_GPU.png' alt='clustering GPU image'/>
+                    <figcaption>Clustering using GPU.</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section class='projects-section'>
+            <h1>Reinforcement Learning applied to Snake</h1>
+            <a href='https://github.com/tommaso2212/SnakeRL' target="_blank"><i class="fas fa-external-link-alt"></i>&nbsp;https://github.com/tommaso2212/SnakeRL</a>
+            <p>Using Python, I have created a machine learning algorithm, in particular using the Q-Learning approach, that learns itself, how to play Snake.</p>
+            <div class='image-div'>    
+                <figure>
+                    <img src='assets/img/snakeRL.png' alt='snake image'/>
+                    <figcaption>Points reached per game.</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section class='projects-section'>
+            <h1>Honorable Mentions</h1>
+            <div class='image-div'>
+                <figure>
+                    <img src='assets/img/Pacman_invaders.png' alt='Pacman image'/>
+                    <figcaption>Pacman Invaders</figcaption>
+                </figure>
+            </div>
+        </section>
+    </body>
+</html>

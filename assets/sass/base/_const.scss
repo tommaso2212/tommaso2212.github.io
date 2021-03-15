@@ -20,6 +20,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: $background-color;
     color: $color-secondary;
+    padding-bottom: 5vh;
     &::after {
         content: '';
         position: fixed;
@@ -45,4 +46,15 @@ h1, h2, h3, h4, h5, h6, p, body, ul, li {
 ul {
     padding: 0;
     list-style: none;
+}
+
+//Icon
+.concentric-circle-icon {
+    background-color: $color_primary;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 20px;
+    box-shadow: 0 0 0 3px rgba($color-primary, .5);
 }

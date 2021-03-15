@@ -1,4 +1,5 @@
 @use '../base/const' as _;
+
 .personal-data {
     display: flex;
     flex-direction: column-reverse;
@@ -15,5 +16,14 @@
     }
     li {
         padding: 2vh 3vw;
+    }
+}
+
+.social-section {
+    display: flex;
+    justify-content: center;
+    i {
+        font-size: 32px;
+        margin: 0 20px;
     }
 }

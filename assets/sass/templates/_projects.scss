@@ -1,0 +1,39 @@
+@use '../base/const' as _;
+
+.projects-section {
+    &:hover {
+        cursor: pointer;
+    }
+    h1 {
+        margin-bottom: 10px;
+    }
+    a {
+        text-decoration: none;
+        color: _.$color_primary;
+    }
+    p {
+        margin-top: 10px;
+    }
+    li {
+        display: flex;
+        align-items: flex-start;
+        margin: 2vh 0;
+    }
+    li::before {
+        content: '';
+        margin-top: 4px;
+        @extend .concentric-circle-icon;
+    }
+    .image-div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    figure {
+        img {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 15px;
+        }
+        text-align: center;
+    }
+}
