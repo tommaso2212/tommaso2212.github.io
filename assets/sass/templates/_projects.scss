@@ -1,9 +1,6 @@
 @use '../base/const' as _;
 
 .projects-section {
-    &:hover {
-        cursor: pointer;
-    }
     h1 {
         margin-bottom: 10px;
     }
