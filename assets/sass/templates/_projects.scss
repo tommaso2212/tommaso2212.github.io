@@ -7,6 +7,7 @@
     a {
         text-decoration: none;
         color: _.$color_primary;
+        text-overflow: ellipsis;
     }
     p {
         margin-top: 10px;
@@ -29,6 +30,7 @@
         img {
             max-height: 300px;
             border-radius: 15px;
+            max-width: 100%;
         }
         text-align: center;
     }
