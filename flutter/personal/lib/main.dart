@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:personal/authentication/authentication.dart';
 import 'package:personal/firebase/firebase_authentication.dart';
+import 'package:personal/firebase/firebase_manager.dart';
 
 void main() async {
+  await FirebaseManager.initFirebase();
   await FirebaseAuthentication().login();
   runApp(const MyApp());
 }

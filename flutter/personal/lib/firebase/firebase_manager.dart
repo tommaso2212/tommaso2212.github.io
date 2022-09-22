@@ -6,7 +6,7 @@ class FirebaseManager {
 
   static FirebaseApp? _firebaseApp;
 
-  static void initFirebase() async {
+  static Future<void> initFirebase() async {
     _firebaseApp = await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );

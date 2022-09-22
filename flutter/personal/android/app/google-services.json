@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "265396258247",
+    "firebase_url": "https://personal-tommaso2212-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "personal-tommaso2212",
     "storage_bucket": "personal-tommaso2212.appspot.com"
   },
@@ -29,6 +30,13 @@
             {
               "client_id": "265396258247-ucvvkqan44rtgg2b1jof6s8c73ac26oe.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "265396258247-bi6k0eqornnl87dl1113mqo993ngoeio.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.personal"
+              }
             }
           ]
         }
