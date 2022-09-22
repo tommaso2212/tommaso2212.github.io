@@ -1,0 +1,3 @@
+enum RoleEnum{
+  admin, public
+}

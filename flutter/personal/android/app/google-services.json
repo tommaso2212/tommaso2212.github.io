@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "265396258247",
+    "project_id": "personal-tommaso2212",
+    "storage_bucket": "personal-tommaso2212.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265396258247:android:1ecc179b8e723e97dd45e2",
+        "android_client_info": {
+          "package_name": "com.example.personal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265396258247-ucvvkqan44rtgg2b1jof6s8c73ac26oe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-hauhmpL7ikwBtG4Akvgrx5c_-mZ83O4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265396258247-ucvvkqan44rtgg2b1jof6s8c73ac26oe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
