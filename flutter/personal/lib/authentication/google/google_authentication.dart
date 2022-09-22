@@ -1,6 +1,5 @@
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:personal/authentication/authentication.dart';
-import 'package:personal/authentication/model/user.dart';
 
 class GoogleAuthentication extends Authentication {
 

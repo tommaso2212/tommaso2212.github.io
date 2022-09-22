@@ -30,7 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.0.3
-  google_sign_in: '^4.5.1'
+  google_sign_in: ^5.4.1
   firebase_auth: ^3.10.0
 
 
