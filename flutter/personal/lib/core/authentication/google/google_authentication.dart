@@ -2,8 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:personal/core/authentication/authentication.dart';
 import 'package:personal/core/authentication/authentication_provider.dart';
+import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 
-class GoogleAuthentication implements AuthenticationProvider {
+class GoogleAuthentication extends AuthenticationProvider {
 
   static final GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: [
@@ -17,7 +18,6 @@ class GoogleAuthentication implements AuthenticationProvider {
     if(await _googleSignIn.signInSilently() == null){
       await _googleSignIn.signIn();
     }
-
     Authentication.user.googleSignInAccount = _googleSignIn.currentUser;
   }
   
@@ -33,7 +33,7 @@ class GoogleAuthentication implements AuthenticationProvider {
   Future<bool> get isSignedIn => _googleSignIn.isSignedIn();
 
   @override
-  Future<AuthCredential> get authCredential async {
+  Future<AuthCredential> createAuthCredential() async {
     GoogleSignInAuthentication? googleSignInAuthentication =
         await Authentication.user.googleSignInAccount?.authentication;
 

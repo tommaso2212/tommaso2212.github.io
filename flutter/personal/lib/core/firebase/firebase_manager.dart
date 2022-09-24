@@ -20,6 +20,10 @@ class FirebaseManager {
     await FirebaseAuthentication(authenticationProvider).login();
   }
 
+  static Future<void> signInWithLocalStorage() async {
+    
+  }
+
   static FirebaseApp get app => _getInstanceThrowInitError<FirebaseApp>(_firebaseApp);
 
   static FirebaseFirestore get db => _getInstanceThrowInitError<FirebaseFirestore>(_firebaseFirestore);

@@ -9,5 +9,6 @@ abstract class Authentication {
   Future<void> logout();
 
   Future<bool> get isSignedIn;
+
 }
 
