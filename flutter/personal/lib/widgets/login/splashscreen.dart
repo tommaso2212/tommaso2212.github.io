@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:personal/core/authentication/authentication_provider.dart';
-import 'package:personal/core/authentication/google/google_authentication.dart';
 import 'package:personal/core/firebase/firebase_manager.dart';
 import 'package:personal/widgets/login/components/login_button.dart';
 import 'package:personal/widgets/pages/home_page.dart';
@@ -8,9 +6,8 @@ import 'package:personal/widgets/pages/home_page.dart';
 class Splashscreen extends StatelessWidget {
   const Splashscreen({Key? key}) : super(key: key);
 
-  void login(BuildContext context,
-      AuthenticationProvider authenticationProvider) async {
-    await FirebaseManager.initFirebase(authenticationProvider);
+  void login(BuildContext context) async {
+    await FirebaseManager.initFirebase();
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
         builder: (context) => const HomePage(),
@@ -37,7 +34,7 @@ class Splashscreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: LoginButton(
-                    onPressed: () => login(context, GoogleAuthentication()),
+                    onPressed: () => login(context),
                     icon: Container(
                       width: 24,
                       height: 24,

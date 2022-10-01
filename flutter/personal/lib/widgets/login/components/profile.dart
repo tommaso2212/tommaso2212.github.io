@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal/core/authentication/firebase/firebase_authentication.dart';
-import 'package:personal/core/authentication/model/role_enum.dart';
+import 'package:personal/core/authentication/firebase_authentication.dart';
+import 'package:personal/core/firestore/model/user_data.dart';
 import 'package:personal/widgets/login/splashscreen.dart';
 
 class Profile extends StatelessWidget {
@@ -16,8 +16,18 @@ class Profile extends StatelessWidget {
       : super(key: key);
 
   void logout(BuildContext context) async {
-    await FirebaseAuthentication.instance.logout();
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Splashscreen()));
+    await FirebaseAuthentication.logout();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const Splashscreen()));
+  }
+
+  TextDecoration getTextDecoration() {
+    switch (role) {
+      case RoleEnum.admin:
+        return TextDecoration.underline;
+      default:
+        return TextDecoration.none;
+    }
   }
 
   @override
@@ -36,10 +46,9 @@ class Profile extends StatelessWidget {
           child: Text(
             name,
             style: TextStyle(
-                fontSize: 18,
-                decoration: RoleEnum.admin == role
-                    ? TextDecoration.underline
-                    : TextDecoration.none),
+              fontSize: 18,
+              decoration: getTextDecoration(),
+            ),
           ),
         ),
         OutlinedButton(
