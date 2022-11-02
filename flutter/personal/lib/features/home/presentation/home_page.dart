@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:googleapis/drive/v3.dart';
 import 'package:personal/components/app_scaffold.dart';
@@ -11,11 +13,11 @@ class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   void showFilePickerDialog(BuildContext context) async {
-    File? file = await DriveFilePickerBottomSheet.showBottomSheet(context);
+    Uint8List? file = await DriveFilePickerBottomSheet.showBottomSheet(context);
     if(file == null){
       print("Niente");
     } else {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => PdfReader(fileDriveId: file.id!),));
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => PdfReader(data: file,),));
     }
   }
 

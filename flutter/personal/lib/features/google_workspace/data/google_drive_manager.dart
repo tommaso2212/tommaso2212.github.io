@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:googleapis/drive/v3.dart';
 import 'package:personal/features/authentication/application/google_authentication.dart';
 import 'package:personal/utils/service_locator/service_locator.dart';
@@ -25,8 +27,10 @@ class _GoogleDriveManager implements GoogleDriveManager {
 
   @override
   Future<Media> downloadFile(String id) async {
-    return await driveApi!.files
-        .get(id, downloadOptions: DownloadOptions.fullMedia) as Media;
+    Object media = await driveApi!.files
+        .get(id, downloadOptions: DownloadOptions.fullMedia);
+
+    return media as Media;
   }
 
   @override

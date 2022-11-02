@@ -1,11 +1,13 @@
+import 'dart:typed_data';
+
 import 'package:pdfx/pdfx.dart';
 import 'package:flutter/material.dart';
 import 'package:internet_file/internet_file.dart';
 
 class PdfReader extends StatefulWidget {
-  final String fileDriveId;
+  final Uint8List data;
 
-  const PdfReader({Key? key, required this.fileDriveId}) : super(key: key);
+  const PdfReader({Key? key, required this.data}) : super(key: key);
 
   @override
   State<PdfReader> createState() => _PdfReaderState();
@@ -17,16 +19,10 @@ class _PdfReaderState extends State<PdfReader> {
   @override
   void initState() {
     super.initState();
-    pdfPinchController = PdfControllerPinch(
-      document: PdfDocument.openData(
-        InternetFile.get(
-            'https://drive.google.com/file/d/${widget.fileDriveId}/view'),
-      ),
-    );
-  }
 
-  void initPdfController(){
-    
+    pdfPinchController = PdfControllerPinch(
+      document: PdfDocument.openData(Future.value(widget.data)),
+    );
   }
 
   @override

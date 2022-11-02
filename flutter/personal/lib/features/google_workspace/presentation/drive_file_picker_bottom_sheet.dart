@@ -1,13 +1,14 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
-import 'package:googleapis/drive/v3.dart';
 import 'package:personal/features/google_workspace/data/google_drive_manager.dart';
 import 'package:personal/features/google_workspace/presentation/drive_file_picker/drive_file_picker.dart';
 import 'package:personal/utils/service_locator/service_locator.dart';
 
 class DriveFilePickerBottomSheet {
-  static Future<File?> showBottomSheet(BuildContext context) async {
+  static Future<Uint8List?> showBottomSheet(BuildContext context) async {
     serviceLocator<GoogleDriveManager>().initDriveClient();
-    return await showModalBottomSheet<File>(
+    return await showModalBottomSheet<Uint8List>(
       context: context,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
