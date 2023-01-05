@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal/constants/app_color.dart';
-import 'package:personal/features/users/application/user_service.dart';
 import 'package:personal/features/users/domain/user.dart';
-import 'package:personal/features/users/presentation/user_avatar.dart';
 import 'package:personal/routing/app_routing.dart';
-import 'package:personal/utils/service_locator/service_locator.dart';
 
 class AppScaffold extends StatelessWidget {
   final Widget child;
@@ -21,7 +18,7 @@ class AppScaffold extends StatelessWidget {
         elevation: 0,
         actions: [
           ...appBarActions,
-          UserAvatar(),
+          //UserAvatar(),
         ],
       ),
       body: child,

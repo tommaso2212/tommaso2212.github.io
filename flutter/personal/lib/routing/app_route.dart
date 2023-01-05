@@ -1,14 +1,8 @@
-enum AppRoute { login, home }
+enum AppRoute {
+  login('Login', '/login'),
+  home('Home', '/');
 
-extension AppRouteExtension on AppRoute {
-  String toPath() {
-    switch (this) {
-      case AppRoute.login:
-        return '/login';
-      case AppRoute.home:
-        return '/';
-      default:
-        return '';
-    }
-  }
+  final String name;
+  final String path;
+  const AppRoute(this.name, this.path);
 }
