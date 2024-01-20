@@ -11,7 +11,7 @@ class WordleGrid extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     var words = ref.watch(wordleWordsStateProvider);
     return Container(
-      padding: AppDimensions.getPadding(Dimension.medium),
+      padding: Dimension.medium.padding,
       decoration: BoxDecoration(
         borderRadius: AppDimensions.borderRadius,
         border: Border.all(
@@ -29,7 +29,7 @@ class WordleGrid extends ConsumerWidget {
             isActive: index == 0 && words[0] == '' || (words[index] == '' && words[index - 1] != ''),
           ),
         ),
-        separatorBuilder: (context, index) => AppDimensions.getVerticalSeparator(Dimension.small),
+        separatorBuilder: (context, index) => Dimension.small.verticalSeparator,
         itemCount: words.length,
       ),
     );

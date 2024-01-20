@@ -29,7 +29,7 @@ class WorldeRow extends ConsumerWidget {
         character: characters[index],
         status: getStatus(characters[index], index, wordToGuess, isActive),
       ),
-      separatorBuilder: (context, index) => AppDimensions.getHorizontalSeparator(Dimension.small),
+      separatorBuilder: (context, index) => Dimension.small.horizontalSeparator,
       itemCount: 5,
     );
   }

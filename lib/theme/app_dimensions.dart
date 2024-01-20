@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 
 class AppDimensions {
   static BorderRadius get borderRadius => BorderRadius.circular(8);
-
-  static SizedBox getHorizontalSeparator(Dimension dimension) => SizedBox(width: dimension.value);
-  static SizedBox getVerticalSeparator(Dimension dimension) => SizedBox(height: dimension.value);
-
-  static EdgeInsets getPadding(Dimension dimension) => EdgeInsets.all(dimension.value);
 }
 
 enum Dimension {
@@ -16,4 +11,12 @@ enum Dimension {
 
   final double value;
   const Dimension(this.value);
+}
+
+extension DimensionUtility on Dimension {
+  EdgeInsets get padding => EdgeInsets.all(value);
+  EdgeInsets get horizontalPadding => EdgeInsets.symmetric(horizontal: value);
+  EdgeInsets get verticalPadding => EdgeInsets.symmetric(vertical: value);
+  SizedBox get horizontalSeparator => SizedBox(width: value);
+  SizedBox get verticalSeparator => SizedBox(height: value);
 }
