@@ -11,11 +11,6 @@ class HomePageGridStateNotifier extends StateNotifier<List<GoRoute>> {
 
   static List<GoRoute> routes = [
     AppRouter.wordleRoute,
-    AppRouter.wordleRoute,
-    AppRouter.wordleRoute,
-    AppRouter.wordleRoute,
-    AppRouter.wordleRoute,
-    AppRouter.wordleRoute,
   ];
 
   void filterRoutes(String? text) {
