@@ -3,8 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:personal_website/base/app_bar/base_app_bar_path.dart';
 import 'package:personal_website/base/scaffold/base_scaffold.dart';
 import 'package:personal_website/pages/wordle/components/wordle_grid.dart';
-import 'package:personal_website/pages/wordle/components/wordle_keyboard.dart';
+
 import 'package:personal_website/service/router/app_router.dart';
+import 'package:personal_website/theme/app_dimensions.dart';
 
 class WordlePage extends ConsumerWidget {
   const WordlePage({super.key});
@@ -18,16 +19,14 @@ class WordlePage extends ConsumerWidget {
           onTap: () {},
         ),
       ],
-      body: const WordleKeyboard(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              WordleGrid(),
-            ],
+      slivers: [
+        SliverPadding(
+          padding: EdgeInsets.only(
+            top: Dimension.small.value,
           ),
+          sliver: const WordleGrid(),
         ),
-      ),
+      ],
     );
   }
 }

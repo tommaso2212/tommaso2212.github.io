@@ -27,6 +27,9 @@ dependencies:
     sdk: flutter
   intl: any
 
+  # Web
+  dio: ^5.4.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -36,3 +39,6 @@ dev_dependencies:
 flutter:
   generate: true
   uses-material-design: true
+
+  assets:
+    - assets/wordle-5-letter-list.json
