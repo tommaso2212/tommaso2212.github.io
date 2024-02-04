@@ -34,7 +34,7 @@ extension DimensionUtility on Dimension {
 enum Device {
   mobile(maxDeviceWidth: 600.0),
   tablet(maxDeviceWidth: 1200.0),
-  web();
+  dekstop();
 
   final double? maxDeviceWidth;
   const Device({this.maxDeviceWidth});
@@ -43,13 +43,14 @@ enum Device {
     final width = MediaQuery.of(context).size.width;
     return Device.values.firstWhere(
       (element) => element.maxDeviceWidth != null ? width < element.maxDeviceWidth! : false,
-      orElse: () => Device.web,
+      orElse: () => Device.dekstop,
     );
   }
 
   T on<T>({
     T Function()? onMobile,
     T Function()? onTablet,
+    T Function()? onDesktop,
     required T Function() orElse,
   }) {
     switch (this) {
@@ -57,8 +58,8 @@ enum Device {
         return onMobile != null ? onMobile() : orElse();
       case Device.tablet:
         return onTablet != null ? onTablet() : orElse();
-      default:
-        return orElse();
+      case Device.dekstop:
+        return onDesktop != null ? onDesktop() : orElse();
     }
   }
 }

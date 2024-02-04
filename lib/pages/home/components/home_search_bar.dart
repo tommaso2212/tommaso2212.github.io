@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:personal_website/pages/home/application/home_page_grid_provider.dart';
+import 'package:personal_website/service/inspect_code/presentation/inspectable_widget.dart';
 import 'package:personal_website/theme/app_dimensions.dart';
 
 class HomeSearchBar extends ConsumerStatefulWidget {
@@ -33,11 +34,14 @@ class _HomeSearchBarState extends ConsumerState<HomeSearchBar> {
     return SliverPadding(
       padding: AppDimensions.getPagePadding(context).copyWith(top: Dimension.large.value),
       sliver: SliverToBoxAdapter(
-        child: SearchBar(
-          controller: controller,
-          hintText: 'Search',
-          padding: MaterialStatePropertyAll(Dimension.medium.horizontalPadding),
-          leading: const Icon(Icons.search_rounded),
+        child: InspectableWidget(
+          path: 'lib/pages/home/components/home_search_bar.dart',
+          child: SearchBar(
+            controller: controller,
+            hintText: 'Search',
+            padding: MaterialStatePropertyAll(Dimension.medium.horizontalPadding),
+            leading: const Icon(Icons.search_rounded),
+          ),
         ),
       ),
     );

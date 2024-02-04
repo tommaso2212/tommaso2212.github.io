@@ -27,7 +27,7 @@ dependencies:
     sdk: flutter
   intl: any
 
-  # Web
+  # Network
   dio: ^5.4.0
 
 dev_dependencies:
@@ -42,3 +42,6 @@ flutter:
 
   assets:
     - assets/wordle-5-letter-list.json
+    - lib/
+    - lib/base/app_bar/
+    - lib/pages/home/components/
