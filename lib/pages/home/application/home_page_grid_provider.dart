@@ -10,6 +10,7 @@ class HomePageGridStateNotifier extends StateNotifier<List<GoRoute>> {
   HomePageGridStateNotifier() : super(routes);
 
   static List<GoRoute> routes = [
+    AppRouter.restaurantRoute,
     AppRouter.wordleRoute,
   ];
 

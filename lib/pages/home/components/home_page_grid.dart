@@ -18,19 +18,17 @@ class HomePageGrid extends ConsumerWidget {
         bottom: Dimension.large.value,
       ),
       sliver: SliverToBoxAdapter(
-        child: Center(
-          child: Wrap(
-            runSpacing: Dimension.large.value,
-            spacing: Dimension.large.value,
-            children: items
-                .map(
-                  (e) => HomePageGridElement(
-                    label: e.name ?? '',
-                    routeName: e.name,
-                  ),
-                )
-                .toList(),
-          ),
+        child: Wrap(
+          runSpacing: Dimension.large.value,
+          spacing: Dimension.large.value,
+          children: items
+              .map(
+                (e) => HomePageGridElement(
+                  label: e.name ?? '',
+                  routeName: e.name,
+                ),
+              )
+              .toList(),
         ),
       ),
     );

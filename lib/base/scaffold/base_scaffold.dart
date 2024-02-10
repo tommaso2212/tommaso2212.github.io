@@ -8,10 +8,12 @@ class BaseScaffold extends StatelessWidget {
     super.key,
     required this.slivers,
     this.appBarChildren = const [],
+    this.floatingActionButton,
   });
 
   final List<Widget> appBarChildren;
   final List<Widget> slivers;
+  final Widget? floatingActionButton;
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,7 @@ class BaseScaffold extends StatelessWidget {
       title: AppRouter.getName(context),
       color: Colors.white,
       child: Scaffold(
+        floatingActionButton: floatingActionButton,
         body: CustomScrollView(
           slivers: [
             SliverAppBar(

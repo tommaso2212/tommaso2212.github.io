@@ -18,7 +18,7 @@ class InspectCodeHeader extends StatelessWidget {
         Text(title),
         IconButton(
           onPressed: () => context.pop(),
-          icon: Icon(
+          icon: const Icon(
             Icons.close,
             size: 32,
           ),
