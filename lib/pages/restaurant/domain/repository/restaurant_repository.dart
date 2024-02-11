@@ -12,7 +12,7 @@ abstract class RestaurantRepository {
     RestaurantDishCategory? category,
   });
 
-  Future<void> createOrder({
+  Future<RestaurantOrder> createOrder({
     required RestaurantOrder order,
   });
 
@@ -21,4 +21,15 @@ abstract class RestaurantRepository {
   Future<List<RestaurantOrder>> getOrders({
     RestaurantOrderStatus? status,
   });
+
+  Future<void> updateOrder({
+    required int id,
+    required RestaurantOrderStatus status,
+  });
+
+  Future<void> removeOrder({
+    required int id,
+  });
+
+  Future<Map<RestaurantDish, int>> getDishToPrepare();
 }

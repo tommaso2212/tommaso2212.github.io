@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_website/pages/restaurant/components/restaurant_dish_name.dart';
+import 'package:personal_website/pages/restaurant/components/common/restaurant_card.dart';
+import 'package:personal_website/pages/restaurant/components/common/restaurant_dish_name.dart';
 import 'package:personal_website/pages/restaurant/domain/model/restaurant_dish.dart';
 import 'package:personal_website/theme/app_dimensions.dart';
 
@@ -17,15 +18,7 @@ class RestaurantMenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: Dimension.medium.horizontalPadding.copyWith(
-        top: Dimension.small.value,
-        bottom: Dimension.small.value,
-      ),
-      decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
-        borderRadius: AppDimensions.borderRadius,
-      ),
+    return RestaurantCard(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -36,10 +29,10 @@ class RestaurantMenuItem extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              IconButton.outlined(
+              IconButton.filled(
                 constraints: const BoxConstraints(),
                 onPressed: quantity > 0 ? () => onQuantityUpdate(quantity - 1) : null,
-                iconSize: Dimension.small.value,
+                iconSize: Dimension.medium.value,
                 icon: const Icon(Icons.remove),
               ),
               Padding(
@@ -49,10 +42,10 @@ class RestaurantMenuItem extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
-              IconButton.outlined(
+              IconButton.filled(
                 constraints: const BoxConstraints(),
                 onPressed: () => onQuantityUpdate(quantity + 1),
-                iconSize: Dimension.small.value,
+                iconSize: Dimension.medium.value,
                 icon: const Icon(Icons.add),
               ),
             ],

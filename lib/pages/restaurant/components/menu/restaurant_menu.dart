@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:personal_website/pages/restaurant/components/restaurant_menu_section.dart';
+import 'package:personal_website/pages/restaurant/components/menu/restaurant_menu_section.dart';
 import 'package:personal_website/pages/restaurant/domain/model/restaurant_dish.dart';
 import 'package:personal_website/pages/restaurant/domain/model/restaurant_order.dart';
 import 'package:personal_website/theme/app_dimensions.dart';

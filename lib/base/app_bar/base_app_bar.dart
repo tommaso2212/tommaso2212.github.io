@@ -6,10 +6,12 @@ import 'package:personal_website/service/router/app_router.dart';
 class BaseAppBar extends StatelessWidget {
   const BaseAppBar({
     required this.children,
+    required this.isBack,
     super.key,
   });
 
   final List<Widget> children;
+  final bool isBack;
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +20,9 @@ class BaseAppBar extends StatelessWidget {
       child: Row(
         children: [
           IconButton.outlined(
-            icon: const Icon(Icons.home_rounded),
+            icon: Icon(isBack ? Icons.arrow_back : Icons.home_rounded),
             style: OutlinedButtonTheme.of(context).style,
-            onPressed: () => context.go(AppRouter.homeRoute.path),
+            onPressed: () => isBack ? context.pop() : context.go(AppRouter.homeRoute.path),
           ),
           ...children,
         ],

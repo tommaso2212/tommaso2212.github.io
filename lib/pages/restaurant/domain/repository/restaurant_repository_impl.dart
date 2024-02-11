@@ -17,15 +17,16 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
   }
 
   @override
-  Future<void> createOrder({required RestaurantOrder order}) async {
-    final id = _mockOrders.length;
-    _mockOrders.add(
-      RestaurantOrder(
-        id: id,
-        dishes: order.dishes,
-        status: RestaurantOrderStatus.toConfirm,
-      ),
+  Future<RestaurantOrder> createOrder({required RestaurantOrder order}) async {
+    final id = _mockOrders.length + 1;
+    final newOrder = RestaurantOrder(
+      id: id,
+      dishes: order.dishes,
+      status: RestaurantOrderStatus.toConfirm,
+      creationDate: DateTime.now(),
     );
+    _mockOrders.add(newOrder);
+    return newOrder;
   }
 
   @override
@@ -38,10 +39,42 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
 
   @override
   Future<List<RestaurantOrder>> getOrders({RestaurantOrderStatus? status}) async {
-    var response = List.from(_mockOrders) as List<RestaurantOrder>;
-
+    var orders = _mockOrders;
     if (status != null) {
-      response = response.where((element) => element.status == status).toList();
+      orders = orders.where((element) => element.status == status).toList();
+    }
+    orders.sort(
+      (a, b) => a.creationDate!.compareTo(b.creationDate!),
+    );
+    return orders;
+  }
+
+  @override
+  Future<void> updateOrder({required int id, required RestaurantOrderStatus status}) async {
+    final order = _mockOrders.firstWhere(
+      (element) => element.id == id,
+    );
+
+    _mockOrders.remove(order);
+    final newOrder = order.copyWith(status: status);
+    _mockOrders.add(newOrder);
+  }
+
+  @override
+  Future<void> removeOrder({required int id}) async {
+    _mockOrders.removeWhere((element) => element.id == id);
+  }
+
+  @override
+  Future<Map<RestaurantDish, int>> getDishToPrepare() async {
+    final response = <RestaurantDish, int>{};
+
+    for (final order in _mockOrders.where((element) => element.status == RestaurantOrderStatus.toDo)) {
+      response.addAll(
+        order.dishes.map(
+          (key, value) => MapEntry(_mockDishes.firstWhere((element) => element.id == key), value),
+        ),
+      );
     }
 
     return response;
@@ -103,9 +136,10 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
 
   final List<RestaurantOrder> _mockOrders = [
     RestaurantOrder(
-      id: 12,
+      id: 1,
       dishes: {1: 1, 3: 2, 8: 1},
-      status: RestaurantOrderStatus.toConfirm,
+      status: RestaurantOrderStatus.toDo,
+      creationDate: DateTime.now(),
     ),
   ];
 }

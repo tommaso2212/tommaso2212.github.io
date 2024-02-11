@@ -9,11 +9,13 @@ class BaseScaffold extends StatelessWidget {
     required this.slivers,
     this.appBarChildren = const [],
     this.floatingActionButton,
+    this.isBack = false,
   });
 
   final List<Widget> appBarChildren;
   final List<Widget> slivers;
   final Widget? floatingActionButton;
+  final bool isBack;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,10 @@ class BaseScaffold extends StatelessWidget {
           slivers: [
             SliverAppBar(
               toolbarHeight: AppDimensions.appBarHeight,
-              title: BaseAppBar(children: appBarChildren),
+              title: BaseAppBar(
+                isBack: isBack,
+                children: appBarChildren,
+              ),
               automaticallyImplyLeading: false,
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             ),

@@ -25,9 +25,3 @@ enum RestaurantDishCategory {
   final String title;
   const RestaurantDishCategory(this.title);
 }
-
-extension RestaurantDishFormatter on RestaurantDish {
-  String priceToEuros() {
-    return '${price.toStringAsFixed(2)} €';
-  }
-}

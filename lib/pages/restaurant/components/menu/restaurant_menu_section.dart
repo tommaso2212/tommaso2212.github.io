@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:personal_website/base/expansion_tile/base_expansion_tile.dart';
+import 'package:personal_website/pages/restaurant/application/restaurant_dish_list_provider.dart';
 import 'package:personal_website/pages/restaurant/application/restaurant_order_provider.dart';
-import 'package:personal_website/pages/restaurant/components/restaurant_menu_item.dart';
+import 'package:personal_website/pages/restaurant/components/menu/restaurant_menu_item.dart';
 import 'package:personal_website/pages/restaurant/domain/model/restaurant_dish.dart';
 import 'package:personal_website/pages/restaurant/domain/model/restaurant_order.dart';
-import 'package:personal_website/pages/restaurant/domain/repository/restaurant_repository.dart';
 import 'package:personal_website/theme/app_dimensions.dart';
 
 final _restaurantMenuSectionProvider = FutureProviderFamily<List<RestaurantDish>, RestaurantDishCategory>((ref, arg) {
-  final repo = ref.read(restaurantRepositoryProvider);
-  return repo.getDishes(category: arg);
+  final menu = ref.watch(restaurantDishListProvider);
+  return menu.maybeMap(
+    data: (data) => data.value.where((element) => element.category == arg).toList(),
+    orElse: () => [],
+  );
 });
 
 class RestaurantMenuSection extends ConsumerWidget {
