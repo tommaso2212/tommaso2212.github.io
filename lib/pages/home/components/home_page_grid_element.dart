@@ -20,7 +20,9 @@ class HomePageGridElement extends StatelessWidget {
         children: [
           FilledButton(
             style: FilledButtonTheme.of(context).style?.copyWith(
-                  padding: MaterialStatePropertyAll(Dimension.large.padding),
+                  minimumSize: const MaterialStatePropertyAll(
+                    Size(125, 125),
+                  ),
                   shape: MaterialStatePropertyAll(
                     RoundedRectangleBorder(
                       borderRadius: AppDimensions.borderRadius,

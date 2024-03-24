@@ -16,7 +16,6 @@ class WordlePage extends ConsumerWidget {
       appBarChildren: [
         BaseAppBarPath(
           title: AppRouter.getName(context),
-          onTap: () {},
         ),
       ],
       slivers: [
